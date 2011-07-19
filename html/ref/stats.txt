@@ -1,0 +1,1 @@
+<table class="column"><tr><td class="first"><div class="infobox"><div class="infobox-header">Node status overview</div><div class="infobox-content"><ul><li>bwlimitDelayTime:&nbsp;110ms</li><li>nodeAveragePingTime:&nbsp;754ms</li><li>networkSizeEstimate:&nbsp;189&nbsp;nodes</li><li>nodeUptime:&nbsp;4h30m</li></ul></div></div>

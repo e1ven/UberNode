@@ -1,0 +1,5 @@
+#!/bin/sh
+cd /var/www/html/ref
+echo "Hi";
+cat $1 | awk 'BEGIN{RS="<";getline}/peer_connected/{if(flag==""){}}//{print "<" $0 >"output.html"}/My Peers/{exit}END{print "</html>" >"output.html"}' 
+

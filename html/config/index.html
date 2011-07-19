@@ -1,0 +1,111 @@
+<!DOCTYPE
+	html PUBLIC "-//W3C//DTD XHTML 1.1//EN">
+<html xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="theme.css" type="text/css" />
+<link rel="alternate stylesheet" type="text/css" href="/static/themes/aqua/theme.css" media="screen" title="aqua" />
+<link rel="alternate stylesheet" type="text/css" href="/static/themes/boxed/theme.css" media="screen" title="boxed" />
+<link rel="alternate stylesheet" type="text/css" href="/static/themes/grayandblue/theme.css" media="screen" title="grayandblue" />
+<link rel="alternate stylesheet" type="text/css" href="/static/themes/sky/theme.css" media="screen" title="sky" />
+<title>Freenet Node Configuration - Freenet</title>
+</head>
+<body>
+<div id="page">
+<div id="topbar">
+<h1>Freenet Node Configuration</h1>
+</div>
+<div id="navbar">
+<ul id="navlist">
+<li><a href="/" title="Homepage">Home</a></li>
+<li><a href="/plugins/" title="Configure Plugins">Plugins</a></li>
+<li><a href="/config/" title="Configure your node">Configuration</a></li>
+<li><a href="/darknet/" title="Manage darknet connections">Darknet</a></li>
+<li><a href="/queue/" title="Manage queued requests">Queue</a></li>
+</ul>
+</div>
+<div id="content">
+<div class="infobox infobox-normal">
+<div class="infobox-header">
+Freenet Node Configuration
+</div>
+<div class="infobox-content">
+<form method="post" action="."><input type="hidden" name="formPassword" value="1Lrg0foCbn3~lVDi3fSepg"><ul class="config"><span class="configprefix">pluginmanager2</span>
+<li><span class="configshortdesc">Download and Install Plugin</span><span class="config"><input alt="Plugins to load on start up" class="config" type="text" name="pluginmanager2.loadedPlugins" value="" /></span><span class="configlongdesc">If you would like to add a plugin to Freenet, enter it's ID here.  For examples of available plugins, please visit <a href="http://wiki.freenetproject.org/AvailablePlugins">the Freenet Wiki</a>.</span></li>
+</ul>
+<ul class="config"><span class="configprefix">toadletsymlinker</span>
+<li><span class="configshortdesc">Installed Plugins</span><span class="config"><input alt="Symlinks in ToadletServer" class="config" type="text" name="toadletsymlinker.symlinks" value="/sl/gallery/#/plugins/plugins.TestGallery/;/sl/search/#/plugins/plugins.Librarian/;" /></span><span class="configlongdesc">A list of symbolic links, and what plugin they translate to</span></li>
+</ul>
+<ul class="config"><span class="configprefix">console</span>
+<li><span class="configshortdesc">Enable TMCI</span><span class="config"><select name="console.enabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Freenet can optionally enable a text-mode telnet interface for retrieving keys, and managing your node. Some third party tools require this to be enabled.</span></li>
+<li><span class="configshortdesc">Enable on stdout/stdin?</span><span class="config"><select name="console.directEnabled" ><option value="true">true</option><option value="false" selected>false</option></select></span><span class="configlongdesc">If Enabled, the text mode interface runs in the same shell/command window in which you started freenet. If set to disabled, the TMCI server listens for telnet connections</span></li>
+
+<li><span class="configshortdesc">IP address to bind to</span><span class="config"><input alt="IP address to bind to" class="config" type="text" name="console.bindTo" value="88.198.34.145" /></span><span class="configlongdesc">The IP address that Freenet should use. This should usually be 127.0.0.1, if you aren't connecting to this freenet server from multiple machines. If you are, set it to the IP address of this server.</span></li>
+<li><span class="configshortdesc">Telnet port</span><span class="config"><input alt="Telnet port" class="config" type="text" name="console.port" value="2323" /></span><span class="configlongdesc">The port that the telnet server runs on</span></li>
+<li><span class="configshortdesc">Allowed hosts</span><span class="config"><input alt="Allowed hosts" class="config" type="text" name="console.allowedHosts" value="69.65.102.169,ubernode.org,akari.homeunix.org" /></span><span class="configlongdesc">A list of IP addresses that are allowed to connect to the telnet server. This may be either a single entry, or a comma-separated list.</span></li>
+</ul>
+<ul class="config"><span class="configprefix">fcp</span>
+<li><span class="configshortdesc">Enable Third-Party Client Support?</span><span class="config"><select name="fcp.enabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Should Freenet open itself to other applications running on your computer?</span></li>
+<li><span class="configshortdesc">Store downloads when the node is shut down</span><span class="config"><select name="fcp.persistentDownloadsEnabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Should freenet remember what you are uploading and downloading when you shut it down? Saying yes will allow freenet to resume a download, but may pose a privacy risk.</span></li>
+<li><span class="configshortdesc">Filename to store persistent downloads in</span><span class="config"><input alt="Filename to store persistent downloads in" class="config" type="text" name="fcp.persistentDownloadsFile" value="downloads.dat" /></span><span class="configlongdesc">Filename to store details of persistent downloads to</span></li>
+<li><span class="configshortdesc">Ip address to bind to</span><span class="config"><input alt="Ip address to bind to" class="config" type="text" name="fcp.bindTo" value="88.198.34.145" /></span><span class="configlongdesc">The IP address that Freenet should use. This should usually be 127.0.0.1, if you aren't connecting to this freenet server from multiple machines. If you are, set it to the IP address of this server.</span></li>
+<li><span class="configshortdesc">FCP port number</span><span class="config"><input alt="FCP port number" class="config" type="text" name="fcp.port" value="9481" /></span><span class="configlongdesc">Port number for third-party clients running on your machine</span></li>
+<li><span class="configshortdesc">Interval between writing persistent downloads to disk</span><span class="config"><input alt="Interval between writing persistent downloads to disk" class="config" type="text" name="fcp.persistentDownloadsInterval" value="300000" /></span><span class="configlongdesc"How often should freenet store information about what it's downloading?</span></li>
+<li><span class="configshortdesc">Allowed hosts</span><span class="config"><input alt="Allowed hosts" class="config" type="text" name="fcp.allowedHosts" value="69.65.102.169,ubernode.org" /></span><span class="configlongdesc">A list of IP addresses that are allowed to connect run third-party programs, which connect through this computer. This may be either a single entry, or a comma-separated list</span></li>
+</ul>
+<ul class="config"><span class="configprefix">pluginmanager</span>
+<li><span class="configshortdesc">Plugins to load on startup </span><span class="config"><input alt="Plugins to load on startup " class="config" type="text" name="pluginmanager.loadplugin" value="plugins.Librarian@http%3a//downloads.freenetproject.org/alpha/plugins/Librarian.jar.url" /></span><span class="configlongdesc">Classpath, name and location for plugins to load when node starts up</span></li>
+</ul>
+<ul class="config"><span class="configprefix">node.testnet</span>
+<li><span class="configshortdesc">Enable testnet mode? (DANGEROUS)</span><span class="config"><select name="node.testnet.enabled" ><option value="true">true</option><option value="false" selected>false</option></select></span><span class="configlongdesc">Testnet is an optional mode to run freenet in, which allows the developers full access to what you are doing. Having a few people, who are working with the developers, set this is a good idea, but most people should select Disabled. Enabling Testnet will stop your machine from connecting to most of freenet.</span></li>
+</ul>
+<ul class="config"><span class="configprefix">node</span>
+<li><span class="configshortdesc">Temp files directory</span><span class="config"><input alt="Temp files directory" class="config" type="text" name="node.tempDir" value="./temp-11919" /></span><span class="configlongdesc">Name of directory to put temporary files in</span></li>
+
+
+<li><span class="configshortdesc">IP address to bind to</span><span class="config"><input alt="IP address to bind to" class="config" type="text" name="node.bindTo" value="0.0.0.0" /></span><span class="configlongdesc">The IP address that the freenet node should run on. This will usually be the normal IP address of the machine.</span></li>
+<li><span class="configshortdesc">Store directory</span><span class="config"><input alt="Store directory" class="config" type="text" name="node.storeDir" value="." /></span><span class="configlongdesc">Name of directory to put store files in</span></li>
+<li><span class="configshortdesc">IP address override</span><span class="config"><input alt="IP address override" class="config" type="text" name="node.ipAddressOverride" value="ubernode.net" /></span><span class="configlongdesc">IP address override (not usually needed)</span></li>
+<li><span class="configshortdesc">Output bandwidth limit (bytes per second)</span><span class="config"><input alt="Output bandwidth limit (bytes per second)" class="config" type="text" name="node.outputBandwidthLimit" value="300K" /></span><span class="configlongdesc">How much bandwidth, in Bytes/second, should freenet be allowed to send out?</span></li>
+<li><span class="configshortdesc">Include local addresses in noderef</span><span class="config"><select name="node.includeLocalAddressesInNoderefs" ><option value="true">true</option><option value="false" selected>false</option></select></span><span class="configlongdesc">Whether to include local addresses (LAN and localhost) in node references. This will not be useful unless the other side sets metadata.allowLocalAddresses=true for this reference.</span></li>
+<li><span class="configshortdesc">Persistent temp files directory</span><span class="config"><input alt="Persistent temp files directory" class="config" type="text" name="node.persistentTempDir" value="./persistent-temp-11919" /></span><span class="configlongdesc">Name of directory to put persistent temp files in</span></li>
+<li><span class="configshortdesc">Temporary IP address hint</span><span class="config"><input alt="Temporary IP address hint" class="config" type="text" name="node.tempIPAddressHint" value="" /></span><span class="configlongdesc">Temporary hint to what our IP might be; deleted after use</span></li>
+<li><span class="configshortdesc">Store size in bytes</span><span class="config"><input alt="Store size in bytes" class="config" type="text" name="node.storeSize" value="100G" /></span><span class="configlongdesc">Store size in bytes</span></li>
+<li><span class="configshortdesc">FNP port number (UDP)</span><span class="config"><input alt="FNP port number (UDP)" class="config" type="text" name="node.listenPort" value="13423" /></span><span class="configlongdesc">UDP port for node-to-node communications (Freenet Node Protocol)</span></li>
+<li><span class="configshortdesc">Node directory</span><span class="config"><input alt="Node directory" class="config" type="text" name="node.nodeDir" value="." /></span><span class="configlongdesc">Name of directory to put node-related files e.g. peers list in</span></li>
+<li><span class="configshortdesc">Node name for darknet</span><span class="config"><input alt="Node name for darknet" class="config" type="text" name="node.name" value="[UB] UberNode.org" /></span><span class="configlongdesc">Node name; you may want to set this to something descriptive if running on darknet e.g. Fred Blogg's Node; it is visible to any connecting node</span></li>
+<li><span class="configshortdesc">Default download directory</span><span class="config"><input alt="Default download directory" class="config" type="text" name="node.downloadsDir" value="downloads" /></span><span class="configlongdesc">The directory to save downloaded files into by default</span></li>
+</ul>
+<ul class="config"><span class="configprefix">node.updater</span>
+<li><span class="configshortdesc">Automatically download new versions</span><span class="config"><select name="node.updater.enabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">If enabled, Freenet will automatically detect and download new versions of itself. They will not automatically install unless you enable Automatically Install new Versions, below.</span></li>
+<li><span class="configshortdesc">Automatically install new versions?</span><span class="config"><select name="node.updater.autoupdate" ><option value="true">true</option><option value="false" selected>false</option></select></span><span class="configlongdesc">If this setting, and "Automatically download new versions" (above) are enabled, freenet will automatically search for, and install new versions of the freenet software. It is HIGHLY recommended that you enable these features. As Freenet is still alpha software, new versions are released on occasion, which will not talk to older versions of freenet. If you set this to disabled, you may lose access to the network, if you do not keep up with updates.</span></li>
+<li><span class="configshortdesc">Where should the node look for revocation ?</span><span class="config"><input alt="Where should the node look for revocation ?" class="config" type="text" name="node.updater.revocationURI" value="freenet:SSK@VOfCZVTYPaatJ~eB~4lu2cPrWEmGyt4bfbB1v15Z6qQ,B6EynLhm7QE0se~rMgWWhl7wh3rFWjxJsEUcyohAm8A,AQABAAE/revoked/" /></span><span class="configlongdesc">Where should the node check, to see if the new version that was put out doesn't work properly, or shouldn't be trusted?</span></li>
+<li><span class="configshortdesc">Where should the node look for updates?</span><span class="config"><input alt="Where should the node look for updates?" class="config" type="text" name="node.updater.URI" value="freenet:USK@SIDKS6l-eOU8IQqDo03d~3qqBd-69WG60aDgg4nWqss,CPFqYi95Is3GwzAdAKtAuFMCXDZFFWC3~uPoidCD67s,AQABAAE/update/771/" /></span><span class="configlongdesc">Where should the node look for updates?</span></li>
+
+</ul>
+<ul class="config"><span class="configprefix">logger</span>
+<li><span class="configshortdesc">Max cached log lines in RAM</span><span class="config"><input alt="Max cached log lines in RAM" class="config" type="text" name="logger.maxCachedLines" value="100k" /></span><span class="configlongdesc">Maximum number of lines of logging cached in RAM</span></li>
+<li><span class="configshortdesc">Enable logging?</span><span class="config"><select name="logger.enabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Set to false to completely disable logging</span></li>
+<li><span class="configshortdesc">Logging directory</span><span class="config"><input alt="Logging directory" class="config" type="text" name="logger.dirname" value="logs" /></span><span class="configlongdesc">Directory into which to put log files</span></li>
+<li><span class="configshortdesc">Max cached log bytes in RAM</span><span class="config"><input alt="Max cached log bytes in RAM" class="config" type="text" name="logger.maxCachedBytes" value="10M" /></span><span class="configlongdesc">Maximum number of bytes of logging cached in RAM</span></li>
+<li><span class="configshortdesc">Minimum priority to log messages at</span><span class="config"><input alt="Minimum priority to log messages at" class="config" type="text" name="logger.priority" value="NORMAL" /></span><span class="configlongdesc">Minimum priority at which messages are logged. options are debug, minor, normal, error, in order of diminishing verbosity</span></li>
+<li><span class="configshortdesc">Log rotation interval</span><span class="config"><input alt="Log rotation interval" class="config" type="text" name="logger.interval" value="5MINUTE" /></span><span class="configlongdesc">Log rotation interval - period after which logs are rotated. We keep the last two log files (current and prev), plus lots of compressed logfiles up to maxZippedLogsSize</span></li>
+<li><span class="configshortdesc">Maximum disk space used by old logs</span><span class="config"><input alt="Maximum disk space used by old logs" class="config" type="text" name="logger.maxZippedLogsSize" value="100M" /></span><span class="configlongdesc">Maximum disk space used by old logs</span></li>
+</ul>
+<ul class="config"><span class="configprefix">fproxy</span>
+<li><span class="configshortdesc">Enable Advanced Darknet?</span><span class="config"><select name="fproxy.advancedDarknetEnabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Should the node display advanced information, which is intended for the developers? Most people should set this to False.</span></li>
+<li><span class="configshortdesc">List of bookmarks</span><span class="config"><input alt="List of bookmarks" class="config" type="text" name="fproxy.bookmarks" value="freenet:USK@PFeLTa1si2Ml5sDeUy7eDhPso6TPdmw-2gWfQ4Jg02w,3ocfrqgUMVWA2PeorZx40TW0c-FiIOL-TWKQHoDbVdE,AQABAAE/Index/35/=Darknet Index;freenet:USK@8fm6BtGmnzv1~BBfPBK-NMMOKiQedj1JoPmkMEzdQ3U,yg2-ADXqhMiRWdYg1CR5btSn7bgpgcX6HhlSZ-nAny8,AQABAAE/Slashdot/8=Slashdot index;freenet:USK@smWZM1fTlHlZxoIvf7UVQsB9Lm7xnAlC73u6C6~f2hs,xT1WSfpra84lKvRMiZ-DohPNfTCJE9A0BqUz7GDz1IU,AQABAAE/Digg/5=Digg index;freenet:USK@rd0SN1AKJoGuNuI9m4~l8wXvbRflzEftZtdwL93UnZE,DWYR7lT4yiJEpjKeUJwyvfo3X2FyM9TZSzXpDEVTotA,AQABAAE/nikyshome/27/=Nikki;freenet:USK@jotJldLVFPDEnvRqfhBWsnXPQpOS~QrawxFjgsLZcFQ,xnNqE4Z~zMHmIUmqrA0oziUFSXNOAC7OhOOH4yhcBq4,AQABAAE/freenetwatch/18/=FreeNetWatch;freenet:USK@LIk6AoIBgPQaAvCFDOKUz-oxu50q86hsEhZymoO2xac,I94eQXrZ1stpe60EyIQZFD6WSe-cOGGmDEH~2k0lwn4,AQABAAE/Daringfireball/5=DaringFireball;freenet:SSK@60I8H8HinpgZSOuTSD66AVlIFAy-xsppFr0YCzCar7c,NzdivUGCGOdlgngOGRbbKDNfSCnjI0FXjHLzJM4xkJ4,AQABAAE/index/50/=Public Index" /></span><span class="configlongdesc">A list of bookmarked Freesites</span></li>
+<li><span class="configshortdesc">Enable web interface?</span><span class="config"><select name="fproxy.enabled" ><option value="true" selected>true</option><option value="false">false</option></select></span><span class="configlongdesc">Should the Freenet Web Interface (Fproxy) be enabled?</span></li>
+<li><span class="configshortdesc">CSS Name</span><span class="config"><input alt="CSS Name" class="config" type="text" name="fproxy.css" value="clean" /></span><span class="configlongdesc">What Theme should Fproxy use? Defaults include- aqua, boxed, clean, grayandblue, sky.</span></li>
+<li><span class="configshortdesc">IP address to bind to</span><span class="config"><input alt="IP address to bind to" class="config" type="text" name="fproxy.bindTo" value="88.198.34.145" /></span><span class="configlongdesc">The IP address that the Freenet Web interface should run on. This will usually be 127.0.0.1, if you are connecting on the same machine that is running freenet. If not, put the IP address of the machine running freenet.</span></li>
+<li><span class="configshortdesc">FProxy port number</span><span class="config"><input alt="FProxy port number" class="config" type="text" name="fproxy.port" value="8888" /></span><span class="configlongdesc">The port number that Fproxy should run on.</span></li>
+<li><span class="configshortdesc">Allowed hosts</span><span class="config"><input alt="Allowed hosts" class="config" type="text" name="fproxy.allowedHosts" value="69.65.102.169,ubernode.org" /></span><span class="configlongdesc">>A list of IP addresses that are allowed to connect to the web interface (Fproxy). This may be either a single entry, or a comma-separated list.</span></li>
+</ul>
+<input type="submit" value="Apply" /><input type="reset" value="Reset" /></form></div>
+</div>
+<br style="clear: all;"/>
+</div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+
+Chesky    14400   IN      A       67.101.252.95
+DreamLander    14400   IN      A       81.181.179.121
+Nico_32's_Node_1_/_    14400   IN      A       84.119.119.199
+UberNode.org    14400   IN      A       6.6.6.6
+UnterNode    14400   IN      A       72.70.98.173
+VeniVidiVici    14400   IN      A       82.163.91.172
+another    14400   IN      A       81.10.197.16
+mmmmmmmmmm    14400   IN      A       81.151.137.7
+squirrel    14400   IN      A       213.146.114.96
+StJ_Node    14400   IN      A       87.219.175.164

@@ -1,0 +1,50 @@
+<?php include "head.php" ?>
+
+  <div id="Main-block">
+
+  <div id="explain">
+  Ubernode.org has attempted to add your node (<?php print $_POST["url"]; ?>) 
+  </div>
+
+  <div id="Right-block-short">
+<pre>
+
+<?php
+
+
+#First, get the Password. 
+$output = "";
+exec('wget http://ubernode.net:8888/darknet/ -qO-  | grep \'name=\"formPassword\" value=\"\' | cut -c 49-70 | uniq',$output,$hi2);
+#echo($output[0]);
+#echo("<br>");
+
+$urlstr = $_POST["url"];
+$urlstr = str_replace("\"", '', $urlstr);  // bcde
+$urlstr = str_replace(";", '', $urlstr);  // bcde
+
+$refstr = $_POST["ref"];
+$refstr = str_replace("\"", '', $refstr);  // bcde
+$refstr = str_replace(";", '', $refstr);  // bcde
+
+exec('curl -F "ref='.$refstr.'" -F "url='.$urlstr.'" -F "add=Add" -F "formPassword='.$output[0].'" http://ubernode.net:8888/darknet/ > /usr/local/freenet/tmp/err.txt',$output,$hi2);
+
+
+#echo('curl -F "ref='.$refstr.'" -F "url='.$urlstr.'" -F "add=Add" -F "formPassword='.$output[0].'" http://ubernode.net:8888/darknet/ > /usr/local/freenet/tmp/err.txt');
+
+
+#echo ('Your Code is- '.$hi2);
+if ($hi2 == 0) echo "Connected to Server. <br>If the box below shows no errors, Your node is likely to be connected. <br><br>Check your <a href=\"http://127.0.0.1:8888\">darknet connections page</a> for a connection from UberNode.org" ;
+if ($hi2 != 0) echo "An error has occured. The server may be down for maintance.";
+
+if ($hi2 == 0) include '/usr/local/freenet/tmp/err.txt';
+
+#exec('/usr/local/freenet/trim /usr/local/freenet/tmp/err.txt'); 
+
+#include '/var/www/html/ref/output.html';
+
+?>
+</pre>
+
+</div>
+  </html>
+

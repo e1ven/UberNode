@@ -1,0 +1,5 @@
+Ubernode.org was a project I made in 2006 to centralize machines, as part of the Freenet project.
+
+The Freenet project didn't yet have what is now called Opennet, which is what allows people who don't know each other to connect and share a network.
+
+Ubernode was one server that everyone could connect to, have it route messages and stores, and generally act as a big file-dump for the internet.
